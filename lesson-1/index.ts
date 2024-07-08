@@ -8,6 +8,7 @@ class School1 {
 
 class Direction {
   levels: any = [];
+  _name: string;
 
   constructor(name: string) {
     this._name = name;
@@ -17,7 +18,7 @@ class Direction {
     return this._name;
   }
 
-  set _name(name: string) {
+  set name(name: string) {
     this._name = name;
   }
 
@@ -28,6 +29,8 @@ class Direction {
 
 class Level1 {
   groups: any = [];
+  _name: string;
+  _program: string;
 
   constructor(name: string, program: string) {
     this._name = name;
@@ -42,11 +45,11 @@ class Level1 {
     return this._program;
   }
 
-  set _name(name: string) {
+  set name(name: string) {
     this._name = name;
   }
 
-  set _program(program: string) {
+  set program(program: string) {
     this._program = program;
   }
 
