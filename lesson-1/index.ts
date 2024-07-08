@@ -1,4 +1,4 @@
-class School {
+class School1 {
   directions: any = [];
 
   addDirection(direction: string): void {
@@ -26,7 +26,7 @@ class Direction {
   }
 }
 
-class Level {
+class Level1 {
   groups: any = [];
 
   constructor(name: string, program: string) {
@@ -55,7 +55,7 @@ class Level {
   }
 }
 
-class Group {
+class Group1 {
   _students: any = [];
   directionName: string; 
   levelName: string;
@@ -82,7 +82,7 @@ class Group {
   }
 }
 
-class Student {
+class Student1 {
   grades: any = {};
   attendance: any = [];
   firstName: string;
