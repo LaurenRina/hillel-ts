@@ -4,11 +4,11 @@ class School {
   _areas: string[] = [];
   _lecturers: object[] = []; // Name, surname, position, company, experience, courses, contacts
 
-  get areas() {
+  get areas(): string[] {
     return this._areas;
   }
 
-  get lecturers() {
+  get lecturers(): object[] {
     return this._lecturers;
   }
 
@@ -33,7 +33,7 @@ class School {
 
 class Area {
   // implement getters for fields and 'add/remove level' methods
-  _levels: string[] = [];
+  _levels: object[] = [];
   _name: string;
 
   constructor(name: string) {
@@ -44,15 +44,15 @@ class Area {
     return this._name;
   }
 
-  get levels(): string[] {
+  get levels(): object[] {
     return this._levels;
   }
 
-  addLevel(level: string): void {
+  addLevel(level: object): void {
     this._levels.push(level);
   }
 
-  removeLevel(level: string): void {
+  removeLevel(level: object): void {
     let indexToRemove = this._levels.indexOf(level);
     this._levels.splice(indexToRemove, 1);
   }
@@ -61,7 +61,7 @@ class Area {
 class Level {
   // implement getters for fields and 'add/remove group' methods
 
-  _groups: string[] = [];
+  _groups: object[] = [];
   _name: string;
   _description: string;
 
@@ -70,7 +70,7 @@ class Level {
     this._description = description;
   }
 
-  get groups(): string[] {
+  get groups(): object[] {
     return this._groups;
   }
 
@@ -82,11 +82,11 @@ class Level {
     return this._description;
   }
 
-  addGroup(group: string): void {
+  addGroup(group: object): void {
     this._groups.push(group);
   }
 
-  removeGroup(group: string): void {
+  removeGroup(group: object): void {
     let indexToRemove = this._groups.indexOf(group);
     this._groups.splice(indexToRemove, 1);
   }
