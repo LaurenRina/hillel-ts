@@ -113,4 +113,11 @@ class Vehiclevehicle {
         throw new Error(`Unknown vehicle type: ${vehicle.type}`);
     }
   }
+
+   public initialize(): void {
+    this.loadFromLocalStorage();
+  }
 }
+
+const vehicleList = new Vehiclevehicle();
+vehicleList.initialize();
