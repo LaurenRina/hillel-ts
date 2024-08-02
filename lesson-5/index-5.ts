@@ -71,6 +71,10 @@ class VehicleValidator {
 class Vehiclevehicle {
   private vehicles: Vehicle[] = [];
 
+  constructor() {
+    this.initialize();
+  }
+
   addVehicle(vehicle: Vehicle): void {
     this.vehicles.push(vehicle);
     this.saveToLocalStorage();
@@ -119,5 +123,3 @@ class Vehiclevehicle {
   }
 }
 
-const vehicleList = new Vehiclevehicle();
-vehicleList.initialize();

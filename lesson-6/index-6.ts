@@ -12,12 +12,12 @@ class Stack<T> {
     this.items.push(item);
   }
 
-  public pop(): void {
-    this.items.pop();
+  public pop(): T | undefined {
+    return this.items.pop();
   }
 
-  public peek(): void {
-    this.items[0];
+  public peek(): T | undefined {
+    return this.items[0];
   }
 }
 
@@ -34,9 +34,7 @@ class Dictionary<K extends string, V> {
 
   public has(): void {
     for (let key in this.arr) {
-      if (this.arr.hasOwnProperty(key)) {
         console.log("Key:", key, ", Value:", this.arr[key]);
-      }
     }
   }
 }
