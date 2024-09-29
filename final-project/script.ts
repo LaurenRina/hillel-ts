@@ -8,12 +8,12 @@ enum PieceType {
   KING = "KING",
 }
 
-interface Position {
+export interface Position {
   row: number;
   col: number;
 }
 
-class Piece {
+export class Piece {
   type: PieceType;
   player: PlayerType;
   position: Position;
@@ -69,7 +69,7 @@ class Board {
 
   setPiece(position: Position, piece: Piece | null): void {
     if (this.isWithinBounds(position)) {
-      this.squares[position.row]![position.col] = piece; 
+      this.squares[position.row]![position.col] = piece;
       if (piece) {
         piece.position = position;
       }
@@ -203,7 +203,7 @@ class Board {
   }
 }
 
-class Game {
+export class Game {
   board: Board;
   currentPlayer: PlayerType;
   winner: PlayerType | null;
@@ -235,7 +235,10 @@ class Game {
     }
   }
 
-  playTurn(piece: Piece, targetPosition: Position) {
+  playTurn(
+    piece: Piece,
+    targetPosition: Position
+  ): { result: string } | undefined {
     if (piece.player !== this.currentPlayer) {
       throw new Error("It's not your turn!");
     }
@@ -250,6 +253,12 @@ class Game {
         )
       ) {
         this.board.capturePiece(piece, targetPosition);
+
+        const possibleCapturesAfterCapture =
+          this.board.getPossibleCaptures(piece);
+        if (possibleCapturesAfterCapture.length > 0) {
+          return { result: "extra-move" };
+        }
       } else {
         throw new Error("You must capture if possible!");
       }
